@@ -37,6 +37,7 @@ jobs:
         with:
           images: |
             kenjitagawa/python-dev-env
+            ghcr.io/${{ github.repository }}
 
       - name: Build and push
         uses: docker/build-push-action@v4
@@ -46,7 +47,6 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/python-dev-env:latest
-            latest
 
           labels: ${{ steps.meta.outputs.labels }}
 
