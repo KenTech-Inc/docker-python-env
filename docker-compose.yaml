@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: python-dev-env
+    command: uvicorn src.main:app --reload --host 0.0.0.0 --port 80
+    ports:
+      - 80:80
+      - 5678:5678
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: redis-dev-env
+
