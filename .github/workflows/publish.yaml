@@ -45,7 +45,10 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-dev-env:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-dev-env:latest
+            latest
+            
           labels: ${{ steps.meta.outputs.labels }}
 
   publish_ghcr:
