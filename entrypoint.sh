@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-dev-up () {
+dev_up () {
     echo "Running docker-compose entrypoint script..."
     docker-compose up --build -d
 }
 
 
-dev-down () {
+dev_down () {
     echo "Running docker-compose down script..."
     docker-compose down
 
@@ -15,3 +15,5 @@ dev-down () {
 
     echo "Complete! All containers have been removed."
 }
+
+"$@"
