@@ -1,0 +1,17 @@
+#########
+######### BEFORE ANY CHANGES, MAKE SURE TO CHECK THE DOCS
+######### https://github.com/actions/labeler
+#########
+
+
+automations:
+- automations/**
+
+workflows:
+- .github/**
+
+website:
+- docs/**
+
+homelab:
+- homelab/**
