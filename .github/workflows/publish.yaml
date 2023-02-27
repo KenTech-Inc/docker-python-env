@@ -36,8 +36,7 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: |
-            my-docker-hub-namespace/my-docker-hub-repository
-            ghcr.io/${{ github.repository }}
+            kenjitagawa/python-dev-env
 
       - name: Build and push
         uses: docker/build-push-action@v4
@@ -45,7 +44,10 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-dev-env:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-dev-env:latest
+            latest
+
           labels: ${{ steps.meta.outputs.labels }}
 
   publish_ghcr:
