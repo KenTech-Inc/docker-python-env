@@ -61,7 +61,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/kenjitagawa/docker-python-env/python-docker-env
+          images: ghcr.io/kenjitagawa/docker-python-env
           tags: |
             type=sha
             latest
