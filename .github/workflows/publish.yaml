@@ -52,7 +52,7 @@ jobs:
 
   publish_ghcr:
     name: Publish to GHCR
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
